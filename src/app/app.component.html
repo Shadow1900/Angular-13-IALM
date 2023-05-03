@@ -23,3 +23,9 @@ Tamaño de fuente en píxeles: {{elemento}}
 <div [ngStyle]="presentacion">Texto centrado en forma horizontal y vertical.</div>
 <button (click)="agrandar()">Agrandar</button>
 <button (click)="reducir()">Reducir</button>
+
+<p [style.background-color]="colorFondo">Color</p>
+
+<div [style.font-size.px]="tamano">Texto</div>
+<button (click)="agrandar()">Agrandar</button>
+<button (click)="reducir()">Reducir</button>
