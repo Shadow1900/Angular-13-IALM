@@ -38,4 +38,7 @@ export class AppComponent {
   disminuir() {
     this.tamano--;
   }
+  retornarColor() {
+    return '#00f';
+  }
 }

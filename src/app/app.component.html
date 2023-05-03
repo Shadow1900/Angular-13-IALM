@@ -6,3 +6,20 @@
 <h1 style="color:red;background-color:#ff0;text-align:center">Sitio fuera de servicio</h1>
 
 <h1 [ngStyle]="{'color':colorFondo}">Sitio fuera de servicio</h1>
+
+<h1 [ngStyle]="{'color':retornarColor()}">Sitio fuera de servicio</h1>
+
+
+<table>
+<tr *ngFor="let elemento of [1,2,3,4,5]">
+    <td [ngStyle]="{'background-color':elemento%2==0?'red':'yellow'}">{{elemento}}</td>
+</tr>
+</table>
+
+<p *ngFor="let elemento of [10,12,14,20,30]" [ngStyle]="{'font-size.px':elemento}">
+Tamaño de fuente en píxeles: {{elemento}}
+</p>
+
+<div [ngStyle]="presentacion">Texto centrado en forma horizontal y vertical.</div>
+<button (click)="agrandar()">Agrandar</button>
+<button (click)="reducir()">Reducir</button>
