@@ -27,4 +27,15 @@ export class AppComponent {
     this.tamano--;
     this.presentacion['font-size.px'] = this.tamano;
   }
+
+  colorFondo = '#ff0';
+  tam = 50;
+
+  aumentar() {
+    this.tamano++;
+  }
+
+  disminuir() {
+    this.tamano--;
+  }
 }
