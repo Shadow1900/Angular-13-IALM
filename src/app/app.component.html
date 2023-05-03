@@ -14,27 +14,35 @@
 <!-- Este código es una directiva de Angular que utiliza la propiedad [ngStyle] para aplicar un estilo dinámico a un elemento HTML h1. El estilo que se aplica es el color del texto y su valor se obtiene de la función retornarColor() que devuelve una cadena con el nombre del color. Por lo tanto, el color del texto puede cambiar en función del resultado de la función retornarColor(). El texto del h1 es "Sitio fuera de servicio". -->
 <h1 [ngStyle]="{'color':retornarColor()}">Sitio fuera de servicio</h1>
 
-<!--  -->
+<!-- ngFor es una directiva estructural de Angular que permite iterar sobre una lista de elementos y crear elementos HTML en consecuencia.
+En este caso, estamos usando la directiva ngFor para iterar sobre un array de números [1,2,3,4,5] y generar una fila (<tr>) por cada elemento.
+*ngFor es la sintaxis para aplicar la directiva ngFor a una etiqueta HTML.
+La variable elemento representa cada uno de los elementos del array que estamos iterando.
+En cada fila (<tr>) estamos creando una celda (<td>) que muestra el valor de elemento.
+La directiva ngStyle se está utilizando para aplicar un estilo en línea al fondo de la celda.
+El operador ternario elemento%2==0?'red':'yellow' se evalúa para cada elemento. Si el elemento es par (el resultado de elemento%2 es igual a 0), se establece el fondo de la celda como rojo ('red'). Si el elemento es impar, se establece el fondo de la celda como amarillo ('yellow'). -->
 <table>
 <tr *ngFor="let elemento of [1,2,3,4,5]">
     <td [ngStyle]="{'background-color':elemento%2==0?'red':'yellow'}">{{elemento}}</td>
 </tr>
 </table>
 
-<!--  -->
+<!-- este código crea cinco elementos <p> con tamaños de fuente diferentes (10px, 12px, 14px, 20px y 30px) y muestra el valor de cada tamaño de fuente debajo de cada elemento correspondiente.  -->
 <p *ngFor="let elemento of [10,12,14,20,30]" [ngStyle]="{'font-size.px':elemento}">
 Tamaño de fuente en píxeles: {{elemento}}
 </p>
 
-<!--  -->
+<!-- El atributo [ngStyle] utilizado en la etiqueta div es una directiva de Angular que permite aplicar estilos dinámicos a un elemento HTML en función de valores en el componente de Angular. En este caso, el estilo aplicado está definido en una variable llamada presentacion que debe estar definida en el componente de Angular correspondiente.
+Los botones utilizan el evento (click) para llamar a dos funciones definidas en el componente de Angular llamadas agrandar() y reducir(), que presumiblemente cambian el tamaño del texto dentro del div. Estas funciones se ejecutarán cuando el usuario haga clic en los botones correspondientes. -->
 <div [ngStyle]="presentacion">Texto centrado en forma horizontal y vertical.</div>
 <button (click)="agrandar()">Agrandar</button>
 <button (click)="reducir()">Reducir</button>
 
-<!--  -->
+<!-- Este código HTML muestra un elemento "p" con el texto "Color". La propiedad "background-color" del estilo del elemento "p" se establece dinámicamente utilizando la variable "colorFondo". Esto significa que el color de fondo del elemento "p" será determinado por el valor de "colorFondo".  -->
 <p [style.background-color]="colorFondo">Color</p>
 
-<!--  -->
+<!-- El elemento de texto está dentro de una etiqueta <div> y tiene un estilo de tamaño de fuente que está vinculado a una variable llamada "tamano" utilizando la sintaxis de enlace de propiedad de estilo de Angular. La variable "tamano" probablemente está definida en el archivo TypeScript correspondiente.
+Hay dos botones, uno con un evento de clic llamado "agrandar()" y otro con un evento de clic llamado "reducir()". Estos eventos probablemente están definidos en el componente de Angular correspondiente y ajustan el valor de la variable "tamano" para aumentar o disminuir el tamaño de fuente del elemento de texto. -->
 <div [style.font-size.px]="tamano">Texto</div>
 <button (click)="agrandar()">Agrandar</button>
 <button (click)="reducir()">Reducir</button>
