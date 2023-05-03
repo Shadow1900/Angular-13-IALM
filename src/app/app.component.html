@@ -1,31 +1,40 @@
 <h1>Uso de la directiva de atributo ngStyle</h1>
 <h3>Ivan Alejandro Lopez Martinez</h3>
 
+<!-- El siguiente código utiliza la directiva ngStyle de Angular para aplicar estilos CSS a un elemento h1. En concreto, se establecen tres estilos: el color del texto se define como rojo, el fondo como amarillo (#ff0) y el texto se alinea en el centro del elemento h1. Además, el texto dentro del elemento h1 es "Sitio fuera de servicio". -->
 <h1 [ngStyle]="{'color':'red','background-color':'#ff0','text-align':'center'}">Sitio fuera de servicio</h1>
+
+<!-- Este código es una etiqueta HTML que representa un encabezado de nivel 1 <h1> con un estilo personalizado aplicado. El estilo se define mediante el atributo style y especifica que el texto del encabezado sea de color rojo (color:red) y que el fondo sea amarillo (background-color:#ff0). Además, el texto se centra en el medio de la página (text-align:center). El texto del encabezado es "Sitio fuera de servicio". -->
 
 <h1 style="color:red;background-color:#ff0;text-align:center">Sitio fuera de servicio</h1>
 
+<!-- Este código representa una etiqueta HTML <h1> que se utiliza para crear un encabezado de nivel 1 en una página web. Además, se utiliza una directiva de Angular llamada ngStyle para aplicar un estilo dinámico a la etiqueta. En este caso, el estilo aplicado se define como un objeto JavaScript dentro de una cadena, donde la propiedad "color" se establece en una variable llamada "colorFondo". Esto significa que el color de fondo del encabezado dependerá del valor de la variable "colorFondo" en el componente Angular que lo utiliza. -->
 <h1 [ngStyle]="{'color':colorFondo}">Sitio fuera de servicio</h1>
 
+<!-- Este código es una directiva de Angular que utiliza la propiedad [ngStyle] para aplicar un estilo dinámico a un elemento HTML h1. El estilo que se aplica es el color del texto y su valor se obtiene de la función retornarColor() que devuelve una cadena con el nombre del color. Por lo tanto, el color del texto puede cambiar en función del resultado de la función retornarColor(). El texto del h1 es "Sitio fuera de servicio". -->
 <h1 [ngStyle]="{'color':retornarColor()}">Sitio fuera de servicio</h1>
 
-
+<!--  -->
 <table>
 <tr *ngFor="let elemento of [1,2,3,4,5]">
     <td [ngStyle]="{'background-color':elemento%2==0?'red':'yellow'}">{{elemento}}</td>
 </tr>
 </table>
 
+<!--  -->
 <p *ngFor="let elemento of [10,12,14,20,30]" [ngStyle]="{'font-size.px':elemento}">
 Tamaño de fuente en píxeles: {{elemento}}
 </p>
 
+<!--  -->
 <div [ngStyle]="presentacion">Texto centrado en forma horizontal y vertical.</div>
 <button (click)="agrandar()">Agrandar</button>
 <button (click)="reducir()">Reducir</button>
 
+<!--  -->
 <p [style.background-color]="colorFondo">Color</p>
 
+<!--  -->
 <div [style.font-size.px]="tamano">Texto</div>
 <button (click)="agrandar()">Agrandar</button>
 <button (click)="reducir()">Reducir</button>
